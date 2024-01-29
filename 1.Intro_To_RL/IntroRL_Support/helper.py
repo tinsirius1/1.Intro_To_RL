@@ -26,11 +26,11 @@ def fill_grid(grid, array):
     if not isinstance(grid, np.ndarray) or not isinstance(array, np.ndarray):
         raise ValueError("Both inputs must be numpy arrays.")
 
-    if (~np.isnan(grid_world.grid)).sum() != len(array):
+    if (~np.isnan(grid)).sum() != len(array):
         raise ValueError("The number of non-NaN elements in the 2D array must match the length of the 1D array.")
 
-    filled_grid = deepcopy(grid_world.grid)
-    filled_grid[~np.isnan(grid_world.grid)] = array
+    filled_grid = deepcopy(grid)
+    filled_grid[~np.isnan(grid)] = array
 
     return filled_grid
 
